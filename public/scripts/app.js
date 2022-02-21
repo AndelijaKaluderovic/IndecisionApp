@@ -3,62 +3,70 @@
 // babel cli:
 // babel src/app.js --out-file=public/scripts/app.js --presets=env,react (+ '--watch')
 
-var app = {
-    title: 'Indecision App',
-    subtitle: 'Put your life into hands of a computer',
-    options: ['one', 'two']
-};
-var template = React.createElement(
-    'div',
-    null,
-    React.createElement(
-        'h1',
-        null,
-        app.title
-    ),
-    app.subtitle && React.createElement(
-        'p',
-        null,
-        app.subtitle
-    ),
-    React.createElement(
-        'p',
-        null,
-        app.options && app.options.length > 0 ? 'Here are your options:' : 'No options'
-    ),
-    React.createElement(
-        'ol',
-        null,
-        React.createElement(
-            'li',
-            null,
-            'Item one'
-        ),
-        React.createElement(
-            'li',
-            null,
-            'Item two'
-        )
-    )
-);
-// const user = {
-//     name: 'Angie Kal',
-//     age: 28
+// Conditional rendering
+// const app = {
+//     title: 'Indecision App',
+//     subtitle: 'Put your life into hands of a computer',
+//     options: ['one', 'two']
 // }
-// const getLocation = (location) => {
-//     if (location) {
-//         return location
-//     } else {
-//         return 'Unknown'
-//     }
-// }
-// const templateTwo = (
+// const template = (
 //     <div>
-//         <h1>{user.name}</h1>
-//         <p>Age: {user.age}</p>
-//         <p>Location: {getLocation()}</p>
+//         <h1>{app.title}</h1>
+//         {app.subtitle && <p>{app.subtitle}</p>}
+//         <p>{app.options.length > 0 ? 'Here are your options:' : 'No options'}</p>
+//         <ol>
+//             <li>Item one</li>
+//             <li>Item two</li>
+//         </ol>
 //     </div>
 // )
+
+
+// Behind the scenes (React without components)
+
+var count = 0;
+var addOne = function addOne() {
+    count++;
+    renderCounterApp();
+};
+var minusOne = function minusOne() {
+    count--;
+    renderCounterApp();
+};
+var resetCount = function resetCount() {
+    count = 0;
+    renderCounterApp();
+};
+
 var appRoot = document.getElementById('app');
 
-ReactDOM.render(template, appRoot);
+var renderCounterApp = function renderCounterApp() {
+    var template = React.createElement(
+        'div',
+        null,
+        React.createElement(
+            'h1',
+            null,
+            'Count: ',
+            count
+        ),
+        React.createElement(
+            'button',
+            { onClick: minusOne },
+            '-1'
+        ),
+        React.createElement(
+            'button',
+            { onClick: resetCount },
+            'reset'
+        ),
+        React.createElement(
+            'button',
+            { onClick: addOne },
+            '+1'
+        )
+    );
+
+    ReactDOM.render(template, appRoot);
+};
+renderCounterApp();
