@@ -1,7 +1,6 @@
 import React from 'react'
 
 const Option = (props) => {
-  console.log('testing');
     return (
       <div className="option">
         <p>{props.optionText}</p>
