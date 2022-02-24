@@ -53,7 +53,7 @@ export default class IndecisionApp extends React.Component {
     }
   }
 
-  componentDidUpdate(prevState, prevProps) {
+  componentDidUpdate(prevProps, prevState) {
     //we are creating condition bcs if we change empty array to empty array, it will run and save the data
     if (prevState.options.length !== this.state.options.length) {
       const json = JSON.stringify(this.state.options)
@@ -70,26 +70,26 @@ export default class IndecisionApp extends React.Component {
     return (
       <div className="app">
         <Header subtitle={subtitle} />
-        <Action
-          hasOptions={this.state.options.length > 0}
-          handlePick={this.handlePick}
-        />
-        <Options
-          options={this.state.options}
-          handleDeleteOptions={this.handleDeleteOptions}
-          handleDeleteOption={this.handleDeleteOption}
-        />
-        <AddOption
-          handleAddOption={this.handleAddOption}
-        />
-        <OptionModal 
-        selectedOption={this.state.selectedOption}
-        handleHideModal={this.handleHideModal}
+        <div className="container">
+          <Action
+            hasOptions={this.state.options.length > 0}
+            handlePick={this.handlePick}
+          />
+          <Options
+            options={this.state.options}
+            handleDeleteOptions={this.handleDeleteOptions}
+            handleDeleteOption={this.handleDeleteOption}
+          />
+          <AddOption
+            handleAddOption={this.handleAddOption}
+          />
+        </div>
+        <OptionModal
+          selectedOption={this.state.selectedOption}
+          handleHideModal={this.handleHideModal}
         />
       </div>
     )
   };
 }
-IndecisionApp.defaultProps = {
-  options: []
-}
+
