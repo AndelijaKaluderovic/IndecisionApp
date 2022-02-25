@@ -1,10 +1,5 @@
-# Indecision App
+Indecision App
 
-**If you have a lot to do and have no idea where to start, this is a perfect app for you. Add all todos and let "somebody else" (a computer algorithm) make a decision for you. This is a fun way to decrease the stress in daily decision making, but also for me as a creator, this project helped me reiforce my knowledge of class components and webpack.**
-[Demo][https://github.com/facebook/create-react-app]
+If you have a lot to do and have no idea where to start, this is a perfect app for you. Add all todos and let "somebody else" (a computer algorithm) make a decision for you. This is a fun way to decrease the stress in daily decision making, but also for me as a creator, this project helped me reiforce my knowledge of class components and webpack.
 
-
-<img src="https://i.ibb.co/DwPSPjm/Screenshot-2022-02-24-at-19-58-50.png"
-
-
-Try it and feel free to provide a feedback.
+Install the needed packages with "yarn" and start the terminal with "yarn run dev-server", after that you will be able to see tha app in http://localhost:8080/
