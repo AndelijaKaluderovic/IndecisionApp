@@ -1,5 +1,0 @@
-Indecision App
-
-If you have a lot to do and have no idea where to start, this is a perfect app for you. Add all todos and let "somebody else" (a computer algorithm) make a decision for you. This is a fun way to decrease the stress in daily decision making, but also for me as a creator, this project helped me reiforce my knowledge of class components and webpack.
-
-Install the needed packages with "yarn" and start the terminal with "yarn run dev-server", after that you will be able to see tha app in http://localhost:8080/
